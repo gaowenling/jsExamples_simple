@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>参数传递，改变DIV的样式</title>
+    <style>
+        #mydiv {
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            background-color: #ff0;
+            border: solid 1px #f90;
+        }
+    </style>
+</head>
+
+<body>
+<p><label>这里输入样式属性</label><input id="getstyle" type="text" /></p>
+<p><label>这里输入样式的值</label><input id="getvalue" type="text" /></p>
+<input id="changestyle" type="button" value="点一下"/> <input id="resetstyle" type="button" value="重置"/>
+<div id="mydiv">我会变</div>
+<script>
+    var getstyle = document.getElementById("getstyle"),
+            getvalue = document.getElementById("getvalue"),
+            changestyle = document.getElementById("changestyle"),
+            resetstyle = document.getElementById("resetstyle"),
+            oDiv = document.getElementById("mydiv");
+    function changeStyle(elem,stylename,stylevalue){
+        elem.style.cssText += ""+stylename+":"+stylevalue+"";
+    }
+    changestyle.onclick = function(){
+        changeStyle(oDiv,getstyle.value,getvalue.value);
+    }
+    resetstyle.onclick = function(){
+        oDiv.removeAttribute("style");
+    }
+</script>
+</body>
+</html>

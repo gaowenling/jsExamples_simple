@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>21倒数</title>
+<style>
+body,div{margin:0;padding:0;}
+body{color:#fff;font:16px/1.5 \5fae\8f6f\96c5\9ed1;}
+#countdown{width:300px;text-align:center;background:#1a1a1a;margin:10px auto;padding:20px 0;}
+input{border:0;width:283px;height:50px;cursor:pointer;margin-top:20px;background:url(http://js.fgm.cc/learn/lesson3/img/btn-1.png) no-repeat;}
+input.cancel{background-position:0 -50px;}
+span{color:#000;width:80px;line-height:2;background:#fbfbfb;border:2px solid #b4b4b4;margin:0 10px;padding:0 10px;}
+</style>
+</head>
+
+<body>
+<div id="countdown">
+	<span>01</span>分钟<span>10</span>秒
+	<input type="button" value="" />
+</div>
+<script>
+var o_countdown = document.getElementById("countdown");
+var btn = document.getElementsByTagName("input")[0];
+var span = o_countdown.getElementsByTagName("span");
+var sum = span[0].innerHTML*60 + span[1].innerHTML*1;
+var timer;
+function dijian(){
+	if(sum <= 0){
+	    clearInterval(timer);
+		return;
+	}
+	sum--;
+	if(sum<=60){
+		span[0].innerHTML = 0;
+	}
+	span[1].innerHTML = parseInt(sum%60);
+}
+dijian();
+btn.onclick = function(){
+	this.className == ""?(timer = setInterval(dijian,1000)):(clearInterval(timer));
+	this.className = this.className == ""?"cancel":"";
+};
+</script>
+</body>
+</html>

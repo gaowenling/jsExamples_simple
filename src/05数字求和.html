@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>数字求和</title>
+
+</head>
+
+<body>
+<input type="text" id="numbers" />
+<input type="submit" id="adds" />
+<div id="sum"></div>
+<script>
+    var i,
+            mynumbers = document.getElementById("numbers"),
+            myadds = document.getElementById("adds"),
+            mysum = document.getElementById("sum");
+    myadds.onclick = function(){
+        var sum = 0,
+                myvalue = mynumbers.value.split(",");
+        for(i in myvalue){
+            sum += parseInt(myvalue[i]);
+        }
+        mysum.innerHTML = sum;
+    }
+</script>
+</body>
+</html>

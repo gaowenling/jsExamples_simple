@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>输入法切换</title>
+    <style>
+        #mydiv {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+<button id="mybtn">点我试试！</button>
+<div id="mydiv">就点，怕你呀
+    <button id="btnclose">算了还是关了吧</button>
+</div>
+<script>
+    var mybtn = document.getElementById("mybtn"),
+            btnclose = document.getElementById("btnclose"),
+            mydiv = document.getElementById("mydiv"),
+            style = mydiv.style;
+    mybtn.onclick = function() {
+        style.display = style.display === "block" ? "none" : "block";
+    };
+    btnclose.onclick = function(){
+        style.display = "none";
+    };
+</script>
+</body>
+</html>

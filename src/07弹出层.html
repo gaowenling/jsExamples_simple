@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>弹出层</title>
+    <style>
+        #mybtn {
+            margin: 0 auto;
+            font-size: 12px;
+            padding: 5px 20px;
+        }
+        #window {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            display: none;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            opacity: 0.5;
+        }
+        #overlay {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            z-index: 2;
+            display: none;
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+            margin-top: -100px;
+            margin-left: -100px;
+            font-size: 12px;
+            line-height: 27px;
+            background-color: #fff;
+            border: solid 3px #ffff00;
+        }
+        #close {
+            padding: 5px 20px;
+        }
+    </style>
+</head>
+
+<body>
+<input id="mybtn" type="button" value="点一下让你看看啥叫高大上" />
+<div id="overlay"><p>其实这些都是逗你玩的，咱们没有高大上这东东，快关了吧</p>
+    <p></p>
+    <p align="center"><input type="button" value="点一下就关闭" id="close" /></p></div>
+<div id="window"></div>
+<script>
+    var myoverlay = document.getElementById("overlay"),
+            mywindow = document.getElementById("window"),
+            mybtn = document.getElementById("mybtn"),
+            myclose = document.getElementById("close");
+    mybtn.onclick = function(){
+        var width =  window.innerWidth,
+                height = window.innerHeight;
+        mywindow.style.cssText = myoverlay.style.cssText = "display:block;";
+    }
+    myclose.onclick = function(){
+        mywindow.style.cssText = myoverlay.style.cssText = "display:none;";
+    }
+</script>
+</body>
+</html>

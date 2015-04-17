@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>页面加载后累加，自加1</title><style>
+body{text-align:center;font:700 30px/1.5 arial;}
+</style></head>
+
+<body>
+<script>
+var i=0,
+    oBody = document.getElementsByTagName("body")[0];
+function add(){
+    oBody.innerHTML = ++ i;
+}
+var s = setInterval(add,1000);
+</script>
+</body>
+</html>
