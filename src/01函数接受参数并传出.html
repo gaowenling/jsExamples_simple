@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>函数接受参数并弹出</title>
+</head>
+
+<body>
+<form id="city">
+    <input type="text" value="北京市" />
+    <input type="text" value="朝阳区" />
+</form>
+<input type="submit" value="传参" id="mybtn" />
+<script>
+    var mycity = document.getElementById("city").getElementsByTagName("input"),
+        mybtn = document.getElementById("mybtn");
+    mybtn.onclick = function(){
+        for(var i=0;i<mycity.length;i++){
+            var myvalue = mycity[i].value;
+            alert (myvalue);
+        }
+    }
+</script>
+</body>
+</html>
